@@ -1,0 +1,17 @@
+a {
+    &.button {
+        text-transform: uppercase;
+        color: $white;
+        height: 32px;
+        padding: 0 15px;
+        border-radius: 3px;
+
+        &.clear-cart {
+            display: inline-block;
+            height: 30px;
+            @include gradient($violet, $purple);
+            border: 1px solid $border-violet;
+        }
+    }
+}
+

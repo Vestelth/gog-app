@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+@import
+    'functions',
+    'variables',
+    'mixins',
+    'print',
+    'reboot',
+    'type';
+
+@import
+    'scss/variables',
+    'scss/base',
+    'scss/components/top-bar',
+    'scss/components/buttons';
+
+
+// TODO:
+/*
+variables.scss
+  - colors
+  - mixins
+  - shadows
+  - gradients
+
+base.scss
+  - css reset
+  - paragraphs
+  - anchors
+
+components.scss
+  - logo
+  - buttons
+    -- small
+    -- clear
+*/

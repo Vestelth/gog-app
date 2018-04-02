@@ -1,0 +1,32 @@
+/* ------ COLORS ------ */
+
+// Basic
+$black: #000;
+$white: #fff;
+
+// Background
+$main-gray: #c2c2c2;
+
+
+// Gradient colors
+$violet: #b258df;
+$purple: #793dc4;
+
+$light-gray: #eeeeee;
+$mid-gray: #dedede;
+
+$green: #00905e;
+
+// borders
+$border-gray: #e4e4e4;
+$border-violet: #865bbb;
+
+
+@mixin gradient($color1, $color2) {
+  background: #b258df;
+  background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+  background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+  background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+}
+
+
