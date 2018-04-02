@@ -1,32 +1,80 @@
 /* ------ COLORS ------ */
+// Base
+$black:         #212121;
+$white:         #fff;
 
-// Basic
-$black: #000;
-$white: #fff;
+// Fonts
+$font-gray:     #686868;
 
 // Background
-$main-gray: #c2c2c2;
-
+$bg-gray:       #c2c2c2;
+$bg-grayblue:   #788795;
 
 // Gradient colors
-$violet: #b258df;
-$purple: #793dc4;
+$violet1:       #985fb2;
+$violet2:       #713b8d;
 
-$light-gray: #eeeeee;
-$mid-gray: #dedede;
+$green:         #80ab00;
+$lightgreen:    #9fbf00;
 
-$green: #00905e;
+$light-gray:    #eeeeee;
+$mid-gray:      #dedede;
+
 
 // borders
-$border-gray: #e4e4e4;
+$border-btn:    #a6a6a6;
+
+$border-gray:     #e4e4e4;
 $border-violet: #865bbb;
 
 
+/* ------ FONTS ------ */
+$font-main: 'Open Sans', sans-serif;
+
+
+/* ------ MIXINS ------ */
+// GRADIENTS
 @mixin gradient($color1, $color2) {
-  background: #b258df;
-  background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
-  background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
-  background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+    background: $color2;
+    background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+    background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+    background: linear-gradient(to bottom, $color1 0%, $color2 100%);
 }
 
+@mixin box-shadow-lg {
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.15),
+    0px 1px 3px 0px rgba(0, 0, 0, 0.15)
+}
 
+@mixin box-shadow-sm {
+    box-shadow: 0 1px 3px -1px rgba(0, 0, 0, .25);
+}
+
+// BREAKPOINTS
+@mixin breakpoint($point) {
+    @if $point == desktop {
+        @media (min-width: 576px) {
+            @content;
+        }
+    }
+    @else if $point == tablet {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == laptop {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $point == phablet {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $point == mobileonly {
+        @media (max-width: 575px) {
+            @content;
+        }
+    }
+}
