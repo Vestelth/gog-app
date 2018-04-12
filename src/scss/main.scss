@@ -8,10 +8,11 @@
     'type';
 
 @import
-    'scss/variables',
-    'scss/base',
-    'scss/components/top-bar',
-    'scss/components/buttons';
+    'utils/variables',
+    'utils/typography',
+    'layout/base',
+    'layout/main-navigation',
+    'components/buttons';
 
 
 // TODO:

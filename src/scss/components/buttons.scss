@@ -1,5 +1,5 @@
 .button {
-    &:not([href]):not([tabindex]) {
+    // &:not([href]):not([tabindex]) {
         color: $white;
         font-size: .875rem;
         font-weight: 600;
@@ -13,7 +13,7 @@
             color: $white;
         }
 
-        &.cart-clear {
+        &.cart--clear {
             display: inline-block;
             height: 38px;
             line-height: 38px;
@@ -25,7 +25,7 @@
             }
         }
 
-        &.cart-add {
+        &.cart--add {
             height: 23px;
             color: $font-gray;
             font-size: .75rem;
@@ -47,5 +47,5 @@
             background: $bg-grayblue;
             @include box-shadow-sm;
         }
-    }
+    // }
 }
