@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700');
+
+// @font-face {
+//     font-family: 'SourceSansPro';
+//     font-weight: normal;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'SourceSansPro-SemiBold';
+//     font-weight: 600;
+//     font-style: normal;
+// }
+// @font-face {
+//     font-family: 'SourceSansPro-Bold';
+//     font-weight: 700;
+//     font-style: normal;
+// }
+
 @font-face {
     font-family: 'Open Sans';
     src: url('../assets/fonts/OpenSans-Regular.ttf') format('truetype');
@@ -8,7 +26,7 @@
 @font-face {
     font-family: 'Open Sans';
     src: url('../assets/fonts/OpenSans-SemiBold.ttf') format('truetype');
-    font-weight: 400;
+    font-weight: 600;
     font-style: normal;
 }
 

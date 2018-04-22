@@ -1,10 +1,10 @@
 .button {
-    // &:not([href]):not([tabindex]) {
+    &:not([href]):not([tabindex]) {
         color: $white;
         font-size: .875rem;
         font-weight: 600;
         text-transform: uppercase;
-        padding: 0 15px;
+        padding: 0 10px;
         border-radius: 3px;
         cursor: pointer;
         user-select: none;
@@ -15,24 +15,29 @@
 
         &.cart--clear {
             display: inline-block;
-            height: 38px;
-            line-height: 38px;
-            @include gradient($violet1, $violet2);
-            @include box-shadow-lg;
+            height: 42px;
+            width: 130px;
+            font-size: .9375rem;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid $border-violet;
+            @include gradient($violet, $purple);
 
             &:hover {
                 background: $purple;
             }
         }
 
-        &.cart--add {
-            height: 23px;
+        &.product--add-cart {
+            display: inline-block;
+            height: 24px;
             color: $font-gray;
-            font-size: .75rem;
-            line-height: 23px;
+            font-size: .875rem;
+            line-height: 22px;
+            text-align: center;
             background: rgba(0, 0, 0, .01);
             border: 1px solid $border-btn;
-            @include box-shadow-sm;
+            // @include box-shadow-md;
 
             &:hover {
                 color: $white;
@@ -40,12 +45,26 @@
             }
         }
 
-        &.item-discount {
-            height: 23px;
-            line-height: 23px;
-            font-size: .75rem;
-            background: $bg-grayblue;
-            @include box-shadow-sm;
+        &.secret-button {
+            // secret styles
         }
-    // }
+    }
+}
+
+.label  {
+    border-radius: 3px;
+    padding: 0 10px;
+
+    &.discount-label {
+        display: inline-block;
+        height: 24px;
+        color: $white;
+        font-size: .875rem;
+        line-height: 22px;
+        background: $mintgreen;
+        border: 1px solid $mintgreen;
+
+        @include font-weight(600);
+        // @include box-shadow-md;
+    }
 }
