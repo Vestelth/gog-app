@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { FeatProduct } from '../models/featured-product.model';
-import { Product } from '../models/product.model';
-import { ProductData } from './product-data';
+import { GameModel } from '../models/game.model';
+import { GameData } from '../models/game-data';
+import { CartData } from '../models/cart-data';
 
 @Component({
   selector: 'app-offer-grid',
@@ -11,38 +11,22 @@ import { ProductData } from './product-data';
 })
 
 export class OfferGridComponent implements OnInit {
-  featuredProduct = new FeatProduct(
-    1,
-    'The Witcher: Adventure Game',
-    'assets/img/the_witcher.png'
-  );
-
-  productsArray: Product[] = [
-    new Product(
-      2,
-      19.98,
-      0.5,
-      'Oddworld: Stranger\'s Wrath',
-      'assets/img/oddworld_strangers_wrath.png',
-      'status'
-    ),
-    new Product(
-      3,
-      10.20,
-      0,
-      'Chaos On Deponia',
-      'assets/img/chaos_on_deponia.png',
-      'owned'
-    ),
-  ];
+  gameArray = GameData;
+  featuredGame: {};
 
   constructor() { }
 
   ngOnInit() {
+    this.getFeaturedGame();
   }
 
-  addToCart() {
-
+  getFeaturedGame() {
+    // tslint:disable-next-line:prefer-const
+    for (let i in this.gameArray) {
+      if (this.gameArray[i].status === 'featured_game') {
+        this.featuredGame = this.gameArray[i];
+      }
+    }
   }
 
 }

@@ -1,0 +1,14 @@
+<div class="product {{game.status}}" >
+  <img src="{{game.imgPath}}" alt="{{game.title}}" />
+
+  <div class="game-info-wrapper">
+
+    <h2 class="game-title">{{game.title}}</h2>
+    <button (click)="addCart(game)"
+              class="button product--add-cart">
+              {{ game.price * game.discount }}</button>
+    <span class="label discount-label">{{'-' + game.discount * 100 + '&#37;'}}</span>
+    <!-- <a class="button game--add-cart">&#36; {{ game.price }}</a> -->
+
+  </div>
+</div>

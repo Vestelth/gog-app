@@ -7,7 +7,7 @@
     <!-- game of the week -->
     <div class="row">
       <div class="featured-game">
-        <img src="{{featuredProduct.imgPath}}" alt="{{featuredProduct.title}}">
+        <img src="{{featuredGame.imgPath}}" alt="{{featuredGame.title}}">
       </div>
     </div>
 
@@ -15,16 +15,11 @@
     <div class="row">
       <div class="game-shelf">
 
-        <div *ngFor="let product of productsArray" class="product {{product.status}}">
-          <img src="{{product.imgPath}}" alt="{{product.title}}"/>
-          <div class="game-info-wrapper">
-            <span class="product-title">{{product.title}}</span>
-            <span *ngIf="product.status !== 'owned' && product.discount > 0" class="label discount-label">{{'-' + product.discount * 100 + '&#37;'}}</span>
-            <a *ngIf="product.status !== 'owned'||'in-cart'"
-               (click)="addToCart()"
-               class="button product--add-cart">&#36; {{ product.price }}</a>
-          </div>
-        </div>
+        <ng-container *ngFor="let item of gameArray">
+
+          <app-game [game]="item" *ngIf="item.status !== 'featured_game'"></app-game>
+
+        </ng-container>
 
       </div>
     </div>
