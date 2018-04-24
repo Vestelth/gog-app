@@ -13,6 +13,11 @@
             color: $white;
         }
 
+        &:focus,
+        &:active {
+            outline: 0;
+        }
+
         &.cart--clear {
             display: inline-block;
             height: 42px;

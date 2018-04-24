@@ -4,7 +4,8 @@
     @include font-weight(700);
 }
 
-.remove-game {
+.game--remove {
     color: $black;
     text-decoration: underline;
+    text-transform: none;
 }

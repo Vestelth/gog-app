@@ -69,24 +69,28 @@
     .cart--game {
         @include flex;
         align-items: center;
-        padding: 5px 8px 5px 5px;
+        padding: 5px 10px 5px 5px;
         border-top: 1px solid $border-gray;
 
         img {
-            flex: 2 28.5714%;
-            width: 100px;
+            // flex: 2 28.5714%;
+            // width: 100px;
             height: 60px;
+            width: auto;
         }
 
-        .game--item-wrap {
-            flex: 4 57.1429%;
+        .game-item-wrap {
             padding-left: 8px;
+            text-overflow: ellipsis;
 
             .game--title {
                 display: block;
+                max-width: 185px;
                 font-size: .9375rem;
                 line-height: 1;
                 text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
                 @include font-weight(600);
             }
 
