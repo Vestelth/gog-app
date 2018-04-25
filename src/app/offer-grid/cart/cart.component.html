@@ -15,7 +15,7 @@
       <span class="cart--items-ammount">{{ cartArray.length }} items in cart</span>
 
       <div class="cart-header-wrap">
-        <span class="cart--price-total">$ {{ totalPrice }}</span>
+        <span class="cart--price-total">&#36; {{ totalPrice }}</span>
         <a class="button cart--clear" (click)="clearCart()">Clear cart</a>
       </div>
     </li>
@@ -27,7 +27,7 @@
         <span class="game--title">{{ elem.title }}</span>
         <a class="game--remove" (click)="removeFromCart(elem)">Remove</a>
       </div>
-      <span class="game--price">{{ countPrice(elem.price, elem.discount) }}</span>
+      <span class="game--price">&#36; {{ countPrice(elem.price, elem.discount) }}</span>
     </li>
 
   </ul>

@@ -12,7 +12,7 @@ import { CartData } from '../../models/cart-data';
 export class CartComponent implements OnInit {
   cartArray = CartData;
   cartActive = false;
-  totalPrice = 0;
+  totalPrice: any;
 
   constructor(private gamesService: GamesService) {}
 
@@ -35,17 +35,19 @@ export class CartComponent implements OnInit {
   }
 
   updateTotalPrice() {
-    this.totalPrice = 0;
+    let price: any = 0;
 
     this.cartArray.forEach(cartItem => {
       if (cartItem.discount > 0) {
-        this.totalPrice += cartItem.price * cartItem.discount;
+        price += cartItem.price * cartItem.discount;
       } else {
-        this.totalPrice += cartItem.price;
+        price += cartItem.price;
       }
     });
 
-    return this.totalPrice.toFixed(2);
+    price = price.toFixed(2);
+
+    return this.totalPrice = price;
   }
 
   removeFromCart(element) {
