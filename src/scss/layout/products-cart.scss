@@ -1,0 +1,110 @@
+.products-cart {
+    position: relative;
+    width: 56px;
+    text-align: center;
+    border-left: 1px solid $border-gray;
+    border-right: 1px solid $border-gray;
+    transition: background-color .2s;
+
+    &:hover {
+        background-color: $shaded-white;
+    }
+
+    .cart-toggle {
+        display: block;
+        line-height: 58px;
+
+        &::before {
+            content: '';
+            position: relative;
+            top: 2px;
+            left: 0;
+            display: inline-block;
+            width: 17px;
+            height: 15px;
+            background: url('../assets/img/ico_cart.png') no-repeat center /cover;
+        }
+
+        .cart--items-ammount {
+            font-size: .875rem;
+            @include font-weight(600);
+        }
+    }
+
+    .cart-contents {
+        position: absolute;
+        top: 58px;
+        right: -1px;
+        display: block;
+        width: 370px;
+        padding-left: 0;
+        list-style: none;
+        text-align: left;
+        background-color: $shaded-white;
+        @include box-shadow-md;
+    }
+
+    .cart-header {
+        padding: 8px;
+
+        @include flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .cart--items-ammount,
+        .cart--price-total {
+            position: relative;
+            top: 1px;
+            font-size: .9375rem;
+            text-transform: uppercase;
+            @include font-weight(700);
+        }
+
+        .cart--price-total {
+            margin-right: 4px;
+        }
+    }
+
+    .cart--game {
+        @include flex;
+        align-items: center;
+        padding: 5px 8px 5px 5px;
+        border-top: 1px solid $border-gray;
+
+        img {
+            flex: 2 28.5714%;
+            width: 100px;
+            height: 60px;
+        }
+
+        .game--item-wrap {
+            flex: 4 57.1429%;
+            padding-left: 8px;
+
+            .game--title {
+                display: block;
+                font-size: .9375rem;
+                line-height: 1;
+                text-overflow: ellipsis;
+                @include font-weight(600);
+            }
+
+            .game--remove {
+                font-size: .75rem;
+                line-height: 1;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .game--price {
+            flex: 1 14.2857%;
+            color: $font-darkgray;
+            text-align: right;
+        }
+    }
+}

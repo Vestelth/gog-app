@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { GameData } from '../../models/game-data';
-import { CartData } from '../../models/cart-data';
 import { GamesService } from '../../games.service';
+import { GameModel } from '../../models/game.model';
+import { CartData } from '../../models/cart-data';
 
 @Component({
   selector: 'app-cart',
@@ -17,8 +17,8 @@ export class CartComponent implements OnInit {
   constructor(private gamesService: GamesService) {}
 
   ngOnInit() {
-    this.gamesService.addedToCart.subscribe(data => {
-      this.cartArray.push(data);
+    this.gamesService.addedToCart$.subscribe(data => {
+      this.cartArray.push(data as GameModel);
       this.updateTotalPrice();
     });
   }
@@ -31,7 +31,6 @@ export class CartComponent implements OnInit {
     if (discount !== 0) {
       return (price * discount).toFixed(2);
     }
-
     return price;
   }
 
@@ -55,7 +54,7 @@ export class CartComponent implements OnInit {
     });
 
     this.updateTotalPrice();
-    this.gamesService.removedFromCart.next(element.id);
+    this.gamesService.removedFromCart$.next(element.id);
   }
 
   clearCart() {

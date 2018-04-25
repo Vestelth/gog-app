@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { GameModel } from '../../models/game.model';
-import { GameData } from '../../models/game-data';
 import { CartData } from '../../models/cart-data';
 import { GamesService } from '../../games.service';
 
@@ -33,10 +32,10 @@ export class GameComponent implements OnInit {
     return false;
   }
 
-  addCart(element) {
+  addCart(element: GameModel) {
     if (element.status === 'available') {
       element.status = 'in_cart';
-      this.gamesService.addedToCart.next(element);
+      this.gamesService.addedToCart$.next(element);
     }
   }
 }

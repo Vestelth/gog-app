@@ -1,0 +1,16 @@
+.navbar {
+    padding: 0;
+    height: 58px;
+    @include gradient($lightgray, $midgray);
+    @include box-shadow-lg;
+}
+
+.navbar-container {
+    // margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu {
+    left: auto;
+    right: 0;
+}

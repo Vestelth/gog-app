@@ -13,7 +13,6 @@ import { GamesService } from '../games.service';
 
 export class OfferGridComponent implements OnInit {
   gameArray = GameData;
-  cartArray = CartData;
   featuredGame: {};
 
   constructor(private gamesService: GamesService) {}
@@ -21,7 +20,7 @@ export class OfferGridComponent implements OnInit {
   ngOnInit() {
     this.getFeaturedGame();
 
-    this.gamesService.removedFromCart.subscribe(
+    this.gamesService.removedFromCart$.subscribe(
       (dataID) => {
         for (let index in this.gameArray) {
           if (this.gameArray[index].id === dataID) {
@@ -30,7 +29,7 @@ export class OfferGridComponent implements OnInit {
         }
       });
 
-    this.gamesService.addedToCart.subscribe(
+    this.gamesService.addedToCart$.subscribe(
       (dataID) => {
         for (let index in this.gameArray) {
           if (this.gameArray[index].id === dataID) {

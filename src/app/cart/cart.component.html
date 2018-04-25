@@ -1,0 +1,30 @@
+<div class="products-cart">
+  <a class="cart-toggle" href="#" id="navbarDropdown" role="button">
+    <span class="cart--items-ammount">{{ 2 }}</span>
+    <span class="sr-only">Toggle cart contents</span>
+  </a>
+
+  <ul class="cart-contents" aria-labelledby="navbarDropdown">
+    <!-- cart header here -->
+    <li class="cart-header">
+      <span class="cart--items-ammount">{{ 2 }} items in cart</span>
+
+      <div class="cart-header-wrap">
+        <span class="cart--price-total">${{ 15.97 }}</span>
+        <a class="button cart--clear">clear cart</a>
+      </div>
+    </li>
+
+    <!-- list of games here -->
+    <!-- <li *ngFor="let game of cartGames" class="cart--game" href="">     -->
+    <li class="cart--game" href="">
+      <img class="game--img" src="assets/img/settlers_2.png" alt="obj.name">
+      <div class="game--item-wrap">
+        <span class="game--title">{{ 'obj.title' }}</span>
+        <span class="game--remove">Remove</span>
+      </div>
+      <span class="game--price">$9.98</span>
+    </li>
+
+  </ul>
+</div>
