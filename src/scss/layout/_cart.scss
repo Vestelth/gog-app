@@ -101,6 +101,7 @@
                 overflow: hidden;
                 white-space: nowrap;
                 @include font-weight(600);
+                margin-bottom: 8px;
             }
 
             .game--remove {

@@ -11,7 +11,7 @@ export const GameData: GameModel[] = [
   },
   {
     id       : 2,
-    price    : 19.98,
+    price    : 9.98,
     discount : 0.5,
     title    : 'Oddworld: Stranger\'s Wrath',
     imgPath  : 'assets/img/oddworld_strangers_wrath.png',
@@ -43,7 +43,7 @@ export const GameData: GameModel[] = [
   },
   {
     id       : 6,
-    price    : 19.98,
+    price    : 6.98,
     discount : 0,
     title    : 'Assassin\'s Creed: Director\'s Cut',
     imgPath  : 'assets/img/assassins_creed.png',

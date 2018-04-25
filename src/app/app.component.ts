@@ -7,11 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'GOG.com';
-
-  // hotfix, HostListener needed here
-  checkCart(e) {
-    if (!e.target.classList.contains('cart-toggle')) {
-      document.querySelector('.cart-toggle.active').classList.remove('active');
-    }
-  }
 }
