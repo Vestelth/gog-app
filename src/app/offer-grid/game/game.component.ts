@@ -3,6 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { GameModel } from '../../models/game.model';
 import { GameData } from '../../models/game-data';
 import { CartData } from '../../models/cart-data';
+import { GamesService } from '../../games.service';
 
 @Component({
   selector: 'app-game',
@@ -11,22 +12,31 @@ import { CartData } from '../../models/cart-data';
 })
 export class GameComponent implements OnInit {
   @Input() game;
+  cartArray = CartData;
 
-  constructor() {}
+  constructor(private gamesService: GamesService) {}
 
   ngOnInit() {}
 
+  countPrice(price, discount) {
+    if (discount !== 0) {
+      return (price * discount).toFixed(2);
+    }
+
+    return price;
+  }
+
+  checkDiscount(discount) {
+    if (discount === 0) {
+      return true;
+    }
+    return false;
+  }
+
   addCart(element) {
-    let notInCart = true;
-
-    CartData.forEach(item => {
-      if (element.id === item.id) {
-        return notInCart = false;
-      }
-    });
-
-    if (notInCart === true) {
-      CartData.push(element);
+    if (element.status === 'available') {
+      element.status = 'in_cart';
+      this.gamesService.addedToCart.next(element);
     }
   }
 }

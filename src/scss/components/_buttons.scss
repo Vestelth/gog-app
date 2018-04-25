@@ -1,12 +1,57 @@
 .button {
     &:not([href]):not([tabindex]) {
         color: $white;
+        cursor: pointer;
+    }
+}
+
+.label {
+    color: $font-gray;
+    border-radius: 3px;
+    padding: 0 10px;
+
+    &.in-cart-label,
+    &.discount-label {
+        cursor: default;
+    }
+
+    &.discount-label {
+        display: inline-block;
+        height: 24px;
+        color: $white;
+        font-size: .875rem;
+        line-height: 22px;
+        background: $mintgreen;
+        border: 1px solid $mintgreen;
+        @include font-weight(600);
+    }
+
+    &.in-cart-label {
+        color: $font-gray;
+        &:hover {
+            color: $font-gray;
+        }
+    }
+
+    &.owned-label {
+        color: lighten( $font-gray, 15%);
+        border: 1px solid lighten($border-btn, 15%);
+        cursor: default;
+
+        &:hover {
+            color: lighten( $font-gray, 15%) !important;
+        }
+    }
+}
+
+.button,
+.label {
+    &:not([href]):not([tabindex]) {
         font-size: .875rem;
         font-weight: 600;
         text-transform: uppercase;
         padding: 0 10px;
         border-radius: 3px;
-        cursor: pointer;
         user-select: none;
 
         &:hover {
@@ -33,16 +78,21 @@
             }
         }
 
-        &.product--add-cart {
+        &.product--add-cart,
+        &.in-cart-label,
+        &.owned-label {
             display: inline-block;
             height: 24px;
-            color: $font-gray;
             font-size: .875rem;
             line-height: 22px;
             text-align: center;
             background: rgba(0, 0, 0, .01);
             border: 1px solid $border-btn;
-            // @include box-shadow-md;
+            @include box-shadow-xs;
+        }
+
+        &.product--add-cart {
+            color: $font-gray;
 
             &:hover {
                 color: $white;
@@ -51,25 +101,22 @@
         }
 
         &.secret-button {
-            // secret styles
+            display: block;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: .9375rem;
+            line-height: 38px;
+            border: 1px solid $border-secret;
+            transform: translate(-50%, -50%);
+            @include gradient($color-secret-1, $color-secret-2);
+            z-index: -1; // for you to adjust!
+            cursor: pointer;
+
+            &:hover {
+                @include gradient($color-secret-2, $color-secret-1);
+            }
         }
-    }
-}
-
-.label  {
-    border-radius: 3px;
-    padding: 0 10px;
-
-    &.discount-label {
-        display: inline-block;
-        height: 24px;
-        color: $white;
-        font-size: .875rem;
-        line-height: 22px;
-        background: $mintgreen;
-        border: 1px solid $mintgreen;
-
-        @include font-weight(600);
-        // @include box-shadow-md;
     }
 }

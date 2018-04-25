@@ -11,6 +11,7 @@
 }
 
 .featured-game {
+    position: relative;
     width: 100%;
     overflow: hidden;
     margin-bottom: 20px;
@@ -33,18 +34,79 @@
 }
 
 .product {
-    @include box-shadow-md;
     flex: 1 1 20%;
     background-color: $white;
     margin-right: 20px;
     max-width: 196px;
+    @include box-shadow-md;
 
     &:last-child {
         margin-right: 0;
     }
 
+    &.available {
+        .game-info-wrapper {
+            .product--add-cart {
+                display: inline-block;
+            }
+            .discount-label {
+                display: inline-block;
+            }
+            .in-cart-label {
+                display: none;
+            }
+            .owned-label {
+                display: none;
+            }
+        }
+    }
+
+    &.in_cart {
+        .game-info-wrapper {
+            .in-cart-label {
+                display: inline-block;
+            }
+            .product--add-cart {
+                display: none;
+            }
+            .discount-label {
+                display: none;
+            }
+            .owned-label {
+                display: none;
+            }
+        }
+    }
+
+    &.owned {
+        .game-info-wrapper {
+            .game-title {
+                color: lighten($font-gray, 15%);
+            }
+
+            .owned-label {
+                display: inline-block;
+            }
+            .product--add-cart {
+                display: none;
+            }
+            .discount-label {
+                display: none;
+            }
+            .in-cart-label {
+                display: none;
+            }
+        }
+    }
+
     .game-info-wrapper {
         padding: 10px 8px;
+
+         &:after {
+             content: '';
+             display: block;
+             clear: both;
+         }
 
         .game-title {
             display: block;
@@ -55,18 +117,14 @@
         }
 
         .discount-label,
-        .product--add-cart {
+        .product--add-cart,
+        .owned-label,
+        .in-cart-label {
             float: right;
         }
 
         .discount-label {
             margin-right: 4px;
-        }
-
-        &:after {
-            content: '';
-            display: block;
-            clear: both;
         }
     }
 }

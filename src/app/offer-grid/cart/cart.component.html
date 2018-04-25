@@ -1,6 +1,11 @@
 <div class="products-cart">
-  <a class="cart-toggle" href="#" id="navbarDropdown" role="button">
-    <span class="cart--items-ammount">{{ 2 }}</span>
+  <a class="cart-toggle"
+     [class.active]="cartActive"
+     (click)="cartToggle()"
+     href="#"
+     id="navbarDropdown"
+     role="button">
+    <span class="cart--items-ammount">{{ cartArray.length }}</span>
     <span class="sr-only">Toggle cart contents</span>
   </a>
 
@@ -22,7 +27,7 @@
         <span class="game--title">{{ elem.title }}</span>
         <a class="game--remove" (click)="removeFromCart(elem)">Remove</a>
       </div>
-      <span class="game--price">{{ elem.price }}</span>
+      <span class="game--price">{{ countPrice(elem.price, elem.discount) }}</span>
     </li>
 
   </ul>

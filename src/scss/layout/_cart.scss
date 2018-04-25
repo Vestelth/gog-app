@@ -1,18 +1,15 @@
 .products-cart {
     position: relative;
+    left: 1px;
     width: 56px;
     text-align: center;
     border-left: 1px solid $border-gray;
     border-right: 1px solid $border-gray;
-    transition: background-color .2s;
-
-    &:hover {
-        background-color: $shaded-white;
-    }
 
     .cart-toggle {
         display: block;
         line-height: 58px;
+        transition: background-color .2s;
 
         &::before {
             content: '';
@@ -25,6 +22,17 @@
             background: url('../assets/img/ico_cart.png') no-repeat center /cover;
         }
 
+        &:hover,
+        &.active {
+            background-color: $shaded-white;
+        }
+
+        &.active {
+            & + .cart-contents {
+                display: block;
+            }
+        }
+
         .cart--items-ammount {
             font-size: .875rem;
             @include font-weight(600);
@@ -34,14 +42,15 @@
     .cart-contents {
         position: absolute;
         top: 58px;
-        right: -1px;
-        display: block;
+        right: 0;
+        display: none;
         width: 370px;
         padding-left: 0;
         list-style: none;
         text-align: left;
         background-color: $shaded-white;
-        @include box-shadow-md;
+        @include box-shadow-bottom;
+        z-index: 1;
     }
 
     .cart-header {

@@ -7,6 +7,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { OfferGridComponent } from './offer-grid/offer-grid.component';
 import { CartComponent } from './offer-grid/cart/cart.component';
 import { GameComponent } from './offer-grid/game/game.component';
+import { GamesService } from './games.service';
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { GameComponent } from './offer-grid/game/game.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [GamesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

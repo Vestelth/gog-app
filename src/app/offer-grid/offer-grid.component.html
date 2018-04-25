@@ -7,7 +7,8 @@
     <!-- game of the week -->
     <div class="row">
       <div class="featured-game">
-        <img src="{{featuredGame.imgPath}}" alt="{{featuredGame.title}}">
+        <a class="button secret-button" (click)="secretFeature()">TRIGGER SECRET FEATURE!</a>
+        <img src="{{featuredGame['imgPath']}}" alt="{{featuredGame['title']}}">
       </div>
     </div>
 
