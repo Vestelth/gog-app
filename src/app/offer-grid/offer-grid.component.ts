@@ -22,9 +22,17 @@ export class OfferGridComponent implements OnInit {
 
     this.gamesService.removedFromCart$.subscribe(
       (dataID) => {
-        for (let index in this.gameArray) {
-          if (this.gameArray[index].id === dataID) {
-            this.gameArray[index].status = 'available';
+        if (dataID === 'clear') {
+          this.gameArray.forEach(element => {
+            if (element.status === 'in_cart') {
+              element.status = 'available';
+            }
+          });
+        } else {
+          for (let index in this.gameArray) {
+            if (this.gameArray[index].id === dataID) {
+              this.gameArray[index].status = 'available';
+            }
           }
         }
       });

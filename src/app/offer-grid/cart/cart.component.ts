@@ -58,8 +58,8 @@ export class CartComponent implements OnInit {
   }
 
   clearCart() {
-    CartData.length = 0;
-    this.cartArray = CartData;
+    this.cartArray.length = 0;
+    this.gamesService.removedFromCart$.next('clear');
     this.updateTotalPrice();
   }
 }
