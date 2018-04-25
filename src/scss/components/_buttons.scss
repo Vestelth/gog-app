@@ -2,6 +2,10 @@
     &:not([href]):not([tabindex]) {
         color: $white;
         cursor: pointer;
+
+        &:hover {
+            color: $white;
+        }
     }
 }
 
@@ -28,6 +32,7 @@
 
     &.in-cart-label {
         color: $font-gray;
+
         &:hover {
             color: $font-gray;
         }
@@ -53,10 +58,6 @@
         padding: 0 10px;
         border-radius: 3px;
         user-select: none;
-
-        &:hover {
-            color: $white;
-        }
 
         &:focus,
         &:active {
