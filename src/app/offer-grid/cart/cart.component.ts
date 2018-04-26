@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.gamesService.addedToCart$.subscribe(data => {
       this.cartArray.push(data as GameModel);
-      this.updateTotalPrice();
+      this.updateTotalPrice(0);
     });
   }
 
@@ -34,7 +34,7 @@ export class CartComponent implements OnInit {
     return price;
   }
 
-  updateTotalPrice() {
+  updateTotalPrice(arg) {
     let price: any = 0;
 
     this.cartArray.forEach(cartItem => {
