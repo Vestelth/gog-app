@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     this.gamesService.addedToCart$.subscribe(data => {
       this.cartArray.push(data as GameModel);
-      this.updateTotalPrice(0);
+      this.updateTotalPrice();
     });
   }
 
@@ -34,8 +34,12 @@ export class CartComponent implements OnInit {
     return price;
   }
 
-  updateTotalPrice(arg) {
+  updateTotalPrice() {
     let price: any = 0;
+
+    if (this.cartArray.length === 0) {
+      return this.totalPrice = price.toFixed(2);
+    }
 
     this.cartArray.forEach(cartItem => {
       if (cartItem.discount > 0) {

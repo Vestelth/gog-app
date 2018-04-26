@@ -21,7 +21,7 @@
 
     <!-- list of games here -->
     <li *ngFor="let elem of cartArray" class="cart--game" href="">
-      <img class="game--img" src="{{ elem.imgPath }}" alt="{{ elem.title }}">
+      <img class="game--img" [src]="elem.imgPath" alt="{{ elem.title }}">
       <div class="game-item-wrap">
         <span class="game--title">{{ elem.title }}</span>
         <a class="game--remove" (click)="removeFromCart(elem)">Remove</a>

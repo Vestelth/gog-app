@@ -1,11 +1,11 @@
 <div class="product {{game.status}}" >
-  <img src="{{game.imgPath}}" alt="{{game.title}}" />
+  <img [src]="game.imgPath" alt="{{game.title}}" />
 
   <div class="game-info-wrapper">
 
     <h2 class="game-title">{{game.title}}</h2>
     <button (click)="addCart(game)"
-              class="button product--add-cart">
+            class="button product--add-cart">
               {{'&#36; ' + countPrice(game.price, game.discount) }}</button>
     <span class="label owned-label">Owned</span>
     <span class="label in-cart-label">In cart</span>

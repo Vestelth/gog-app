@@ -6,7 +6,7 @@ export const GameData: GameModel[] = [
     price    : 0,
     discount : 0,
     title    : 'The Witcher: Adventure Game',
-    imgPath  : '../assets/img/the_witcher.png',
+    imgPath  : 'assets/img/the_witcher.png',
     status   : 'featured_game'
   },
   {
